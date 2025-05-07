@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herbs and Hair - Nourish Your Hair, Naturally</title>
+    <meta name="description" content="Premium natural hair care products for healthy, beautiful hair." />
+    <meta name="author" content="Bloom" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Herbs and Hair - Nourish Your Hair, Naturally" />
+    <meta property="og:description" content="Premium natural hair care products for healthy, beautiful hair." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bloomhaircare" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <style>
+      :root {
+        --beige-light: #f5f3ef;
+        --beige: #e6ddd0;
+        --beige-dark: #d0c3b2;
+        --gray-700: #374151;
+        --gray-600: #4b5563;
+        --gray-800: #1f2937;
+        --gray-300: #d1d5db;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-color: var(--gray-300);
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        color: var(--gray-800);
+        background-color: #ffffff;
+        line-height: 1.5;
+      }
+      
+      h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 500;
+      }
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      
+      /* Navbar */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: all 0.3s;
+        padding: 1rem 1.25rem;
+        background-color: transparent;
+      }
+      
+      header.scrolled {
+        background-color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 0.05em;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-links a {
+        margin-left: 2rem;
+        font-weight: 400;
+        transition: color 0.3s;
+      }
+      
+      .nav-links a:hover {
+        color: var(--gray-600);
+      }
+      
+      .menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: block;
+      }
+      
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color: #ffffff;
+      }
+      
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: url('https://images.unsplash.com/photo-1580618864482-298825a21d45?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+      }
+      
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 50%, #ffffff 100%);
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 20;
+        text-align: center;
+        padding: 0 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        animation: fadeIn 1s ease-out;
+      }
+      
+      .hero p {
+        font-size: 1.125rem;
+        max-width: 32rem;
+        margin: 1.5rem auto;
+        color: var(--gray-800);
+        animation: fadeIn 1s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+      
+      .hero button {
+        margin-top: 2.5rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--gray-300);
+        color: var(--gray-800);
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        animation: fadeIn 1s ease-out 0.5s forwards;
+        opacity: 0;
+      }
+      
+      .hero button:hover {
+        background-color: #ffffff;
+      }
+      
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        animation: bounce 2s infinite;
+        z-index: 20;
+      }
+      
+      /* Product Section */
+      .product {
+        padding: 5rem 1.5rem;
+        background-color: #ffffff;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      
+      .divider {
+        width: 6rem;
+        height: 0.25rem;
+        background-color: var(--beige);
+        margin: 0 auto 4rem;
+      }
+      
+      .product-container {
+        display: grid;
+        gap: 3rem;
+      }
+      
+      .product-image {
+        overflow: hidden;
+        border-radius: 0.5rem;
+      }
+      
+      .product-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.7s ease-in-out;
+      }
+      
+      .product-image img:hover {
+        transform: scale(1.05);
+      }
+      
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .product-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .product-details .mini-divider {
+        width: 4rem;
+        height: 0.125rem;
+        background-color: var(--beige);
+        margin-bottom: 1.5rem;
+      }
+      
+      .product-details p {
+        color: var(--gray-700);
+        margin-bottom: 1.5rem;
+      }
+      
+      .ingredients {
+        margin-bottom: 2rem;
+      }
+      
+      .ingredients h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+      
+      .ingredients-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 1rem;
+      }
+      
+      .ingredients-item {
+        display: flex;
+        align-items: center;
+      }
+      
+      .dot {
+        width: 0.375rem;
+        height: 0.375rem;
+        background-color: var(--beige-dark);
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+      
+      .benefits {
+        margin-top: 1rem;
+      }
+      
+      .benefits h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+      
+      .benefits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .benefits-item {
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .benefits-item .dot {
+        margin-top: 0.5rem;
+      }
+      
+      .cta-button {
+        margin-top: 2rem;
+        align-self: flex-start;
+        border: 1px solid var(--gray-300);
+        background-color: transparent;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .cta-button:hover {
+        background-color: var(--beige-light);
+      }
+      
+      /* Story Section */
+      .story {
+        padding: 5rem 1.5rem;
+        background-color: var(--beige-light);
+      }
+      
+      .story-content {
+        display: grid;
+        gap: 4rem;
+      }
+      
+      .story-text h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .story-text p {
+        color: var(--gray-700);
+        margin-bottom: 1.5rem;
+      }
+      
+      .story-quote {
+        background-color: white;
+        padding: 1.5rem 2rem;
+        border-left: 0.25rem solid var(--beige-dark);
+        font-style: italic;
+        margin-top: 2.5rem;
+      }
+      
+      .story-quote p:first-child {
+        font-size: 1.125rem;
+        font-family: 'Playfair Display', serif;
+      }
+      
+      .story-quote p:last-child {
+        margin-top: 1rem;
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      .story-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 0.5rem;
+      }
+      
+      .gallery-item.full-width {
+        grid-column: span 2;
+      }
+      
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease-in-out;
+      }
+      
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+      
+      .values {
+        margin-top: 5rem;
+      }
+      
+      .values h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .values-grid {
+        display: grid;
+        gap: 2rem;
+      }
+      
+      .value-card {
+        background-color: white;
+        padding: 2rem;
+        text-align: center;
+        transition: box-shadow 0.3s;
+      }
+      
+      .value-card:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .value-icon {
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--beige);
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .value-card h4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+      
+      .value-card p {
+        color: var(--gray-700);
+      }
+      
+      /* Contact Section */
+      .contact {
+        padding: 5rem 1.5rem;
+        background-color: #ffffff;
+      }
+      
+      .contact-intro {
+        text-align: center;
+        max-width: 36rem;
+        margin: 0 auto 3rem;
+        color: var(--gray-700);
+      }
+      
+      .contact-container {
+        display: grid;
+        gap: 3rem;
+      }
+      
+      .contact-form h3, .contact-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+      
+      .form-row {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+      }
+      
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--gray-300);
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+      }
+      
+      .form-group textarea {
+        min-height: 8rem;
+        resize: vertical;
+      }
+      
+      .info-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      .info-group h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      
+      .info-group p {
+        color: var(--gray-700);
+      }
+      
+      .social-links {
+        margin-top: 2rem;
+      }
+      
+      .social-links h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .social-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--gray-300);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+      }
+      
+      .social-icon:hover {
+        background-color: var(--beige-light);
+      }
+      
+      /* Footer */
+      footer {
+        padding: 2.5rem 1.5rem;
+        background-color: var(--beige-light);
+        color: var(--gray-800);
+      }
+      
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .footer-brand {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 1.5rem;
+      }
+      
+      .footer-tagline {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        margin-top: 0.5rem;
+      }
+      
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .footer-links a {
+        color: var(--gray-800);
+        transition: color 0.3s;
+      }
+      
+      .footer-links a:hover {
+        color: var(--gray-600);
+      }
+      
+      .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--beige);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-copyright {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        margin-bottom: 1rem;
+      }
+      
+      .legal-links {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .legal-links a {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        transition: color 0.3s;
+      }
+      
+      .legal-links a:hover {
+        color: var(--gray-800);
+      }
+      
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-30px); }
+        60% { transform: translateY(-15px); }
+      }
+      
+      /* Media Queries */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 4rem;
+        }
+        
+        .nav-links {
+          display: flex;
+        }
+        
+        .menu-button {
+          display: none;
+        }
+        
+        .product-container {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .story-content {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .story-text {
+          order: 1;
+        }
+        
+        .story-gallery {
+          order: 2;
+        }
+        
+        .values-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .contact-container {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .form-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        .footer-top {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        
+        .footer-links {
+          flex-direction: row;
+        }
+        
+        .footer-bottom {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        
+        .footer-copyright {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Header & Navigation -->
+    <header id="header">
+      <div class="container">
+        <nav>
+          <a href="#home" class="brand">Herbs and Hair</a>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#product">Product</a>
+            <a href="#story">Our Story</a>
+            <a href="#contact">Contact</a>
+          </div>
+          
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <h1>Nourish Your Hair,<br>Naturally</h1>
+          <p>Discover our collection of herbal hair care products made with the finest natural ingredients for healthy, beautiful hair.</p>
+          <button onclick="document.getElementById('product').scrollIntoView({behavior: 'smooth'})">Explore Our Products</button>
+        </div>
+        <div class="scroll-indicator">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Product Section -->
+      <section id="product" class="product">
+        <div class="container">
+          <h2 class="section-title">Our Signature Product</h2>
+          <div class="divider"></div>
+          
+          <div class="product-container">
+            <div class="product-image">
+              <img src="IMG_4875.jpg" alt="Bloom Nourishing Hair Oil">
+            </div>
+            
+            <div class="product-details">
+              <h3>Nourishing Hair Oil</h3>
+              <div class="mini-divider"></div>
+              
+              <p>
+                Our lightweight, silky hair oil absorbs quickly to nourish and protect all hair types. 
+                Formulated with a unique blend of natural ingredients to strengthen hair 
+                and add shine without weighing it down.
+              </p>
+              
+              <div class="ingredients">
+                <h4>Key Ingredients:</h4>
+                <div class="ingredients-grid">
+                  <div class="ingredients-item">
+                    <span class="dot"></span>
+                    Hibiscus Oil
+                  </div>
+                  <div class="ingredients-item">
+                    <span class="dot"></span>
+                    Aloe Vera
+                  </div>
+                  <div class="ingredients-item">
+                    <span class="dot"></span>
+                    Rosemary Extract
+                  </div>
+                  <div class="ingredients-item">
+                    <span class="dot"></span>
+                    Tulsi extract
+                  </div>
+                </div>
+              </div>
+              
+              <div class="benefits">
+                <h4>Benefits:</h4>
+                <div class="benefits-list">
+                  <div class="benefits-item">
+                    <span class="dot"></span>
+                    <span>Instantly smooths frizz and adds natural shine</span>
+                  </div>
+                  <div class="benefits-item">
+                    <span class="dot"></span>
+                    <span>Strengthens and nourishes damaged hair</span>
+                  </div>
+                  <div class="benefits-item">
+                    <span class="dot"></span>
+                    <span>Protects against heat damage and environmental stressors</span>
+                  </div>
+                </div>
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section id="story" class="story">
+        <div class="container">
+          <h2 class="section-title">Our Story</h2>
+          <div class="divider"></div>
+          
+          <div class="story-content">
+            <div class="story-text">
+              <h3>Our Journey</h3>
+              
+              <p>
+                Herbs and Hair began in the kitchen as a remedy for my postpartum hair fall, when all else 
+                failed.
+              </p>
+              
+              <p>
+                After 12 years of adding and removing ingredients to form the perfect blend, for my daughter
+                and family, by the age of 45, I found my calling.
+              </p>
+              
+              <p>
+                I felt a deep desire to provide a solution to people who face the same issues related
+                to hair, and thus, Herbs and Hair was born-a gift from a mother to every person in search 
+                of something truly nourishing.
+              </p>
+              
+              <div class="story-quote">
+                <p>
+                  "A gift from a mother to every person in search 
+                  of something truly nourishing."
+                </p>
+                <p>— Jufreena S P, Founder</p>
+              </div>
+            </div>
+            
+            <div class="story-gallery">
+              <div class="gallery-item">
+                <img src="Web development project 2.png" alt="Natural ingredients">
+              </div>
+              <div class="gallery-item">
+                <img src="IMG_4878 (1).jpg" alt="Product creation process">
+              </div>
+              <div class="gallery-item full-width">
+                <img src="IMG_4875.jpg" alt="Bloom founder with products">
+              </div>
+            </div>
+          </div>
+          
+          <div class="values">
+            <h3>Our Values</h3>
+            
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
+                </div>
+                <h4>100% Natural</h4>
+                <p>
+                  We use only natural, plant-based ingredients that are ethically sourced and safe for your hair and scalp.
+                </p>
+              </div>
+              
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <h4>Cruelty-Free</h4>
+                <p>
+                  We never test on animals and work only with partners who share our commitment to ethical practices.
+                </p>
+              </div>
+              
+              <div class="value-card">
+                <div class="value-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                  </svg>
+                </div>
+                <h4>Sustainable</h4>
+                <p>
+                  We prioritize environmentally friendly practices, from recyclable packaging to responsible ingredient sourcing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="divider"></div>
+          <p class="contact-intro">
+            Have questions about our products or want to know where to purchase? 
+            We'd love to hear from you and help with any inquiries.
+          </p>
+          
+          <div class="contact-container">
+            <div class="contact-form">
+              <h3>Send Us a Message</h3>
+              <form>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" placeholder="Your message" rows="5"></textarea>
+                </div>
+                <button class="cta-button" type="submit">
+                  Send Message
+                </button>
+              </form>
+            </div>
+            
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              
+              <div class="info-group">
+                <h4>Address</h4>
+                <p>
+                  Jufreena's<br>
+                  Kannur, Kerala, 670141
+                </p>
+              </div>
+              
+              <div class="info-group">
+                <h4>Phone</h4>
+                <p>+91 907 4492441</p>
+              </div>
+              
+                            
+              <div class="info-group">
+                <h4>Hours</h4>
+                <p>
+                  Monday – Friday: 9am – 5pm PST<br>
+                  Saturday & Sunday: Closed
+                </p>
+              </div>
+              
+              
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a href="#home" class="footer-brand">Herbs and Hair</a>
+            <p class="footer-tagline">Nourish your hair, naturally.</p>
+          </div>
+          
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#product">Product</a>
+            <a href="#story">Our Story</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2025 Herbs and Hair. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script for Navbar scroll effect -->
+    <script>
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      document.querySelector('.menu-button').addEventListener('click', function() {
+        alert('Mobile menu would open here in a complete implementation');
+      });
+    </script>
+    
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </body>
+</html>
